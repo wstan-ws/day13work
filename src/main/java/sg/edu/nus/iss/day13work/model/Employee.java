@@ -36,7 +36,7 @@ public class Employee {
     private String email;
 
     // first digit start with 8 or 9, expectinng 7 digits having digit between 0 to 9
-    @Pattern(regexp = "(\\8|9)[0-9]{7}", message = "Invalid Phone Number")
+    @Pattern(regexp = "(8|9)[0-9]{7}", message = "Invalid Phone Number")
     private String phoneNo;
 
     @Min(value = 1500, message = "Minimum Salary starts from 1500")

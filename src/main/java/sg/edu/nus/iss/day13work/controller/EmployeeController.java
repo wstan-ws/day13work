@@ -73,4 +73,16 @@ public class EmployeeController {
 
         return "employeeupdate";
     }
+
+    @PostMapping("/updemployee")
+    public String updateEmployeeRecord(@ModelAttribute("employee") Employee emp, BindingResult result, Model model) {
+
+        if (result.hasErrors()) {
+            return "employeeupdate";
+        }
+
+        empRepo.updateEmployee(emp);
+
+        return "redirect:/employees/list";
+    }
 }
